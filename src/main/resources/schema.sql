@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS user_info;
+--DROP TABLE IF EXISTS user_info;
 
 CREATE TABLE user_info (
   id INT AUTO_INCREMENT  PRIMARY KEY,
