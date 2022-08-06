@@ -27,4 +27,20 @@ public class UserService {
     public UserInfo saveUserData(UserInfo userInfo) {
         return userRepository.save(userInfo);
     }
+
+    public boolean checkExistingAccount(UserInfo userInfo) {
+        UserInfo userInfo1 =  userRepository.findByEmailAndPassword(userInfo.getEmail(),userInfo.getPassword());
+        if (Objects.nonNull(userInfo1)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean forgotPassword(UserInfo userInfo) {
+        UserInfo byEmail = userRepository.findByEmail(userInfo.getEmail());
+        if (Objects.nonNull(byEmail)) {
+            return true;
+        }
+        return false;
+    }
 }

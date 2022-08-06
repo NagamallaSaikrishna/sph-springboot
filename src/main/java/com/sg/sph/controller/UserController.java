@@ -25,4 +25,15 @@ public class UserController {
         return userService.saveUserData(userInfo);
     }
 
+    @PostMapping("/existingAccount")
+    boolean existingAccount(@RequestBody UserInfo userInfo) {
+        return userService.checkExistingAccount(userInfo);
+    }
+
+    @PostMapping("/forgotPassword")
+    boolean forgotPassword(@RequestBody UserInfo userInfo) {
+        return userService.forgotPassword(userInfo);
+    }
+
+
 }
